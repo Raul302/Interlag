@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { lazy,Suspense } from 'react';
+import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter as Router, Route , Switch} from 'react-router-dom';
+// const NavBar = lazy(() => import('./components/Header/NavBar'));
+// const Footer = lazy(() => import('./components/Footer/Footer'));
+// const ShowCase = lazy(() => import('./components/Section/ShowCase'));
+
+const renderLoader = () => <p>Loading</p>;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Suspense fallback={renderLoader()} >
+ 
+  </Suspense>
+</>
   );
 }
 

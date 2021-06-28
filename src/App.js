@@ -1,8 +1,7 @@
 import React, { lazy,Suspense } from 'react';
-import './index.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Route , Switch} from 'react-router-dom';
-// const NavBar = lazy(() => import('./components/Header/NavBar'));
+import './App.css';
+const Home = lazy(() => import('./Components/HomeSection/Home'));
 // const Footer = lazy(() => import('./components/Footer/Footer'));
 // const ShowCase = lazy(() => import('./components/Section/ShowCase'));
 
@@ -12,7 +11,11 @@ function App() {
   return (
     <>
     <Suspense fallback={renderLoader()} >
- 
+      <Router>
+      <Switch>
+        <Route path="/" exact component={Home}/>
+      </Switch>
+      </Router>
   </Suspense>
 </>
   );
